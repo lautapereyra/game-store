@@ -3,13 +3,13 @@ import { Navigate } from 'react-router-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import Login from './components/auth/login/Login';
+import Login from './components/pages/login/Login';
 import Protected from './components/routing/protected/Protected';
 import NotFound from './components/ui/notFound/NotFound'
 import Dashboard from './components/dashboard/Dashboard';
-import Catalog from './components/catalog/Catalog';
+import Catalog from './components/pages/catalog/Catalog';
 
-import Home from './components/home/Home';
+import Home from './components/pages/home/Home';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -30,7 +30,7 @@ function App() {
           <Route path="/home/*" element={<Dashboard onLogOut={handleLogOut} />} />
           <Route path="/" element={<Navigate to="home" />} />
           <Route path="/login" element={<Login onLogin={handleLogIn} />} />
-          <Route path="/catalog" element={<Catalog />} />
+          <Route path="/catalog/*" element={<Catalog />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>

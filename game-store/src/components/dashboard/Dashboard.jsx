@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "../home/Home";
+import Home from '../pages/home/Home';
 
 const Dashboard = () => {
     return (
