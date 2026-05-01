@@ -3,7 +3,15 @@ import gamesData from "../../../assets/gameData/gameData";
 import Navbar from "../../navbar/Navbar";
 import "./Catalog.css";
 
-function Catalog() {
+
+
+
+function Catalog({ addToCart }) {
+
+
+
+
+
     return (
         <>
             <Navbar />
@@ -13,7 +21,7 @@ function Catalog() {
 
                     <div className="catalog-grid">
                         {gamesData.map((game) => (
-                            <GameCard key={game.id} game={game} />
+                            <GameCard key={game.id} game={game} addToCart={addToCart} />
                         ))}
                     </div>
                 </div>
