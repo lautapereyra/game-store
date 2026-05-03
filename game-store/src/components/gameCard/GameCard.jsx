@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import "./GameCard.css";
 
 function GameCard({ game }) {
@@ -9,7 +10,9 @@ function GameCard({ game }) {
                     <div className="game-card-title">{game.title}</div>
                     <div className="game-card-genre">{game.genre}</div>
                     <div className="game-card-price">${game.price}</div>
+                    <Link to="/game-details">
                     <button>Comprar</button>
+                    </Link>
                 </div>
             </div>
         </div>

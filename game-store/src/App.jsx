@@ -10,6 +10,7 @@ import Dashboard from './components/dashboard/Dashboard';
 import Catalog from './components/pages/catalog/Catalog';
 
 import Home from './components/pages/home/Home';
+import GameDetails from './components/pages/gameDetails/GameDetails';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -31,6 +32,7 @@ function App() {
           <Route path="/" element={<Navigate to="home" />} />
           <Route path="/login" element={<Login onLogin={handleLogIn} />} />
           <Route path="/catalog/*" element={<Catalog />} />
+          <Route path="/game-details/" element={<GameDetails/>}/>
 
           <Route path="*" element={<NotFound />} />
         </Routes>
