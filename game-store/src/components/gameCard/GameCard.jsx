@@ -12,6 +12,7 @@ function GameCard({ game, addToCart }) {
             setAdded(false);
         }, 2000);
     };
+
     return (
         <div className="container">
             <div className="game-card">

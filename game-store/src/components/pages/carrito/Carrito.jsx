@@ -1,8 +1,13 @@
 import "./carrito.css";
 
-function Carrito({ cart = [] }) {
+function Carrito({ cart = [], deleteGame, clearCart }) {
 
   const total = cart.reduce((acc, game) => acc + game.price, 0);
+
+  const handleDelete = (index) => {
+    deleteGame(index);
+  };
+
 
   return (
     <div className="cart-container">
@@ -21,7 +26,7 @@ function Carrito({ cart = [] }) {
                 <p>${game.price}</p>
               </div>
 
-              <button className="btn-remove">
+              <button className="btn-remove" onClick={() => handleDelete(index)}>
                 Eliminar
               </button>
             </div>
@@ -29,7 +34,7 @@ function Carrito({ cart = [] }) {
 
           <h3 className="cart-total">Total: ${total}</h3>
 
-          <button className="btn-clear">
+          <button className="btn-clear" onClick={clearCart}>
             Vaciar carrito
           </button>
         </>
