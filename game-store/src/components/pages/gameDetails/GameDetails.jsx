@@ -3,6 +3,8 @@ import gamesData from '../../../assets/gameData/gameData';
 import Navbar from '../../navbar/Navbar';
 import { Card, Badge, Row, Button } from 'react-bootstrap';
 import { Link } from 'react-router';
+import Catalog from '../catalog/Catalog';
+
 const GameDetails = () => {
      return (
         <>

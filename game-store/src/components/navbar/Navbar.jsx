@@ -8,7 +8,7 @@ const Navbar = () => {
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container custom-navbar">
                 <Link to="/home" className="navbar-brand">
-                    <a className="navbar-brand" href="#">Game Store</a>
+                    Game Store
                 </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -43,6 +43,11 @@ const Navbar = () => {
                     <Link to="/login">
                         <button className="btn btn-outline-success ms-2">
                             Iniciar Sesión
+                        </button>
+                    </Link>
+                    <Link to="/cart">
+                        <button className="btn btn-outline-primary ms-2">
+                            <i className="bi bi-cart"></i>
                         </button>
                     </Link>
                 </div>

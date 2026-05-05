@@ -57,3 +57,9 @@
 .game-card button:hover {
     background-color: #3a8edb;
 }
+
+.success-msg {
+    margin-top: 10px;
+    color: #28a745;
+    font-size: 0.9rem;
+}

@@ -1,7 +1,18 @@
 import { Link } from "react-router";
 import "./GameCard.css";
+import { useState } from 'react'
 
-function GameCard({ game }) {
+function GameCard({ game, addToCart }) {
+    const [added, setAdded] = useState(false);
+
+    const handleAdd = () => {
+        addToCart(game);
+        setAdded(true);
+
+        setTimeout(() => {
+            setAdded(false);
+        }, 2000);
+    };
     return (
         <div className="container">
             <div className="game-card">
@@ -13,6 +24,9 @@ function GameCard({ game }) {
                     <Link to="/game-details">
                     <button>Comprar</button>
                     </Link>
+
+                    <button onClick={handleAdd}>Agregar al carrito</button>
+                    {added && <p className="success-msg">Agregado al carrito ✅</p>}
                 </div>
             </div>
         </div>
