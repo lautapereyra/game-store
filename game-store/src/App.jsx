@@ -42,8 +42,8 @@ function App() {
           <Route path="/" element={<Navigate to="home" />} />
           <Route path="/login" element={<Login onLogin={handleLogIn} />} />
 
-          <Route path="/catalog/*" element={<Catalog />} />
-          <Route path="/game-details/" element={<GameDetails/>}/>
+
+          <Route path="/game-details/" element={<GameDetails />} />
 
           <Route path="/catalog/*" element={<Catalog addToCart={addToCart} />} />
           <Route path="/cart/*" element={<Carrito cart={cart} />} />
