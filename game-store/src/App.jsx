@@ -70,7 +70,7 @@ function App() {
           <Route path="/login" element={<Login onLogin={handleLogIn} />} />
 
 
-          <Route path="/game-details/" element={<GameDetails />} />
+          <Route path="/game/:id" element={<GameDetails />} />
 
           <Route path="/catalog/*" element={<Catalog addToCart={addToCart} />} />
           <Route path="/cart/*" element={<Carrito cart={cart} deleteGame={deleteGame} clearCart={clearCart} />} />

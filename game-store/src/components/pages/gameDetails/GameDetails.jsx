@@ -1,36 +1,54 @@
 import React from 'react'
-import gamesData from '../../../assets/gameData/gameData';
 import Navbar from '../../navbar/Navbar';
-import { Card, Badge, Row, Button } from 'react-bootstrap';
-import { Link } from 'react-router';
+import { Card, Badge, Row, Button, Col } from 'react-bootstrap';
 import Catalog from '../catalog/Catalog';
+import gamesData from '../../../assets/gameData/gameData';
+import { useParams } from 'react-router';
+import'./gamedetails.css' 
+
 
 const GameDetails = () => {
-  return (
+
+  const {id} = useParams();
+
+  const game = gamesData.find(g => g.id=== parseInt(id));
+
+    return (
     <>
       <Navbar />
-      <Card>
-        <Card.Img
-          height={500}
-          variant='top'
-          src={gamesData.image} />
-        <Card.Body>
-          <Card.Title>{gamesData.title}</Card.Title>
-          <Card.Subtitle>{gamesData.genre}</Card.Subtitle>
-          <p>{gamesData.description}</p>
+      <div className='game-background-bg'>
+      <div className="container my-5">
+        <Card className="p-3">
           <Row>
-            <Link to="/game-details">
-              <Button>
-                Comprar Juego
-              </Button>
-            </Link>
+            <Col md={5}>
+              <Card.Img
+                src={game.image}
+                style={{ height: "100%", objectFit: "cover" }}
+              />
+            </Col>
+            
+            <Col md={7}>
+              <Card.Body>
+                <Card.Title>{game.title}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">
+                  {game.genre}
+                </Card.Subtitle>
+
+                <p>{game.description}</p>
+
+                <h4 className="mt-3">${game.price}</h4>
+
+                <Button variant="primary" className="mt-3">
+                  Comprar Juego
+                </Button>
+              </Card.Body>
+            </Col>
+
           </Row>
-        </Card.Body>
-
-
-      </Card>
+        </Card>
+      </div>
+      </div>
     </>
   );
 }
-
-export default GameDetails
+export default GameDetails;

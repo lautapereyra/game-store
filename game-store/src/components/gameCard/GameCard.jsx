@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router";
 import "./GameCard.css";
 import { useState } from 'react'
 
 function GameCard({ game, addToCart }) {
     const [added, setAdded] = useState(false);
+    const navigate = useNavigate();
 
     const handleAdd = () => {
         addToCart(game);
@@ -12,7 +14,9 @@ function GameCard({ game, addToCart }) {
             setAdded(false);
         }, 2000);
     };
-
+    const handleClick = () => {
+        navigate(`/game/${game.id}`);
+    }
     return (
         <div className="container">
             <div className="game-card">
@@ -23,6 +27,9 @@ function GameCard({ game, addToCart }) {
                     <div className="game-card-price">${game.price}</div>
                     <button onClick={handleAdd}>Agregar al carrito</button>
                     {added && <p className="success-msg">Agregado al carrito ✅</p>}
+                    <button onClick={handleClick}>
+                        Ver detalle
+                    </button>
                 </div>
             </div>
         </div>
