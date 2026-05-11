@@ -1,20 +1,145 @@
+/* =========================
+   CATALOGO
+========================= */
+
 .catalog-container {
-    padding: 30px;
-    background-color: #12121c;
+    position: relative;
+
     min-height: 100vh;
-    color: white;
+
+    padding: 40px 0 50px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at top left,
+            rgba(236, 31, 66, 0.18),
+            transparent 28%),
+
+        radial-gradient(circle at bottom right,
+            rgba(236, 31, 66, 0.12),
+            transparent 30%),
+
+        linear-gradient(180deg,
+            #050505 0%,
+            #080808 35%,
+            #000000 100%);
 }
+
+/* EFECTOS DE LUZ */
+
+.catalog-container::before {
+    content: "";
+
+    position: absolute;
+
+    top: -200px;
+    left: -150px;
+
+    width: 500px;
+    height: 500px;
+
+    background: rgba(236, 31, 66, 0.08);
+
+    filter: blur(120px);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.catalog-container::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: -250px;
+    right: -180px;
+
+    width: 550px;
+    height: 550px;
+
+    background: rgba(236, 31, 66, 0.06);
+
+    filter: blur(140px);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+/* =========================
+   TITULO
+========================= */
 
 .catalog-title {
+    position: relative;
+
+    margin-bottom: 30px;
+
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 25px;
-    font-weight: bold;
+
+    font-size: 2.6rem;
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+
+    color: white;
+
+    text-shadow:
+        0 0 18px rgba(236, 31, 66, 0.25);
 }
 
+
+
+/* =========================
+   GRID
+========================= */
+
 .catalog-grid {
+    position: relative;
+
+    z-index: 2;
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(260px, 1fr));
+
     gap: 20px;
-    justify-items: center;
+
+    align-items: stretch;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+
+    .catalog-container {
+        padding: 35px 0 45px;
+    }
+
+    .catalog-title {
+        font-size: 2.1rem;
+    }
+
+    .catalog-grid {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .catalog-title {
+        font-size: 1.8rem;
+    }
+
+    .catalog-grid {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
 }

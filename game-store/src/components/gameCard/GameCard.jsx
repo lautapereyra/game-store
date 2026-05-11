@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import "./GameCard.css";
+import "./gameCard.css";
 import { useState } from 'react'
 
 function GameCard({ game, addToCart }) {
@@ -18,18 +18,18 @@ function GameCard({ game, addToCart }) {
         navigate(`/game/${game.id}`);
     }
     return (
-        <div className="container">
+        <div className="container mb-4">
             <div className="game-card">
                 <img src={game.image} alt={game.title} />
                 <div className="game-card-body">
                     <div className="game-card-title">{game.title}</div>
                     <div className="game-card-genre">{game.genre}</div>
                     <div className="game-card-price">${game.price}</div>
-                    <button onClick={handleAdd}>Agregar al carrito</button>
-                    {added && <p className="success-msg">Agregado al carrito ✅</p>}
                     <button onClick={handleClick}>
-                        Ver detalle
+                        Detalles
                     </button>
+                    <button className="mt-2" onClick={handleAdd}>Agregar al carrito</button>
+                    {added && <p className="success-msg">Agregado al carrito ✅</p>}
                 </div>
             </div>
         </div>

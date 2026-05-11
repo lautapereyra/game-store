@@ -1,7 +1,7 @@
 import GameCard from "../../gameCard/GameCard";
 import gamesData from "../../../assets/gameData/gameData";
 import Navbar from "../../navbar/Navbar";
-import "./Catalog.css";
+import "./catalog.css";
 
 
 
