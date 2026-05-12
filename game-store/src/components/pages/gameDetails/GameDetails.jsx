@@ -97,7 +97,6 @@ const GameDetails = ({ addToCart }) => {
                   Agregado al carrito ✅
                 </p>
               )}
-
             </div>
 
           </div>
