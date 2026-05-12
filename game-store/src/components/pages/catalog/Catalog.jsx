@@ -6,7 +6,7 @@ import "./catalog.css";
 
 
 
-function Catalog({ addToCart }) {
+function Catalog({ addToCart, loggedIn }) {
 
 
 
@@ -21,7 +21,7 @@ function Catalog({ addToCart }) {
 
                     <div className="catalog-grid">
                         {gamesData.map((game) => (
-                            <GameCard key={game.id} game={game} addToCart={addToCart} />
+                            <GameCard key={game.id} game={game} addToCart={addToCart} loggedIn={loggedIn} />
                         ))}
                     </div>
                 </div>

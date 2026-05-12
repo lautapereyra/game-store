@@ -68,8 +68,8 @@ function App() {
           <Route path="/home/*" element={<Dashboard onLogOut={handleLogOut} />} />
           <Route path="/" element={<Navigate to="home" />} />
           <Route path="/login" element={<Login onLogin={handleLogIn} />} />
-          <Route path="/game/:id" element={<GameDetails addToCart={addToCart} />} />
-          <Route path="/catalog/*" element={<Catalog addToCart={addToCart} />} />
+          <Route path="/game/:id" element={<GameDetails addToCart={addToCart} loggedIn={loggedIn} />} />
+          <Route path="/catalog/*" element={<Catalog addToCart={addToCart} loggedIn={loggedIn} />} />
           <Route path="/cart/*" element={<Carrito cart={cart} deleteGame={deleteGame} clearCart={clearCart} />} />
 
           <Route path="*" element={<NotFound />} />

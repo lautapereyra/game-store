@@ -74,7 +74,7 @@
 }
 
 .game-info {
-  flex: 1;
+  position: relative;
 }
 
 .game-title {
@@ -185,15 +185,17 @@
   background: rgba(236, 31, 66, 0.08);
 }
 
+.message-container {
+  height: 30px;
+  margin-top: 10px;
+}
+
 .added-message {
+  position: absolute;
   margin-top: 20px;
-
   color: #ec1f42;
-
   font-size: 1.05rem;
-
   font-weight: 400;
-
   text-shadow: 0 0 12px rgba(236, 31, 66, 0.35);
 }
 

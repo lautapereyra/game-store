@@ -5,7 +5,7 @@ import gamesData from '../../../assets/gameData/gameData';
 import { useParams } from 'react-router';
 import './gamedetails.css'
 
-const GameDetails = ({ addToCart }) => {
+const GameDetails = ({ addToCart, loggedIn }) => {
 
   const { id } = useParams();
 
@@ -13,7 +13,20 @@ const GameDetails = ({ addToCart }) => {
 
   const game = gamesData.find(g => g.id === parseInt(id));
 
+  const [error, setError] = useState(false);
+
   const handleAdd = () => {
+
+    if (!loggedIn) {
+      setError(true);
+
+      setTimeout(() => {
+        setError(false);
+      }, 2000);
+
+      return;
+    }
+
     addToCart(game);
 
     setAdded(true);
@@ -21,7 +34,7 @@ const GameDetails = ({ addToCart }) => {
     setTimeout(() => {
       setAdded(false);
     }, 2000);
-  }
+  };
 
   return (
     <>
@@ -82,6 +95,13 @@ const GameDetails = ({ addToCart }) => {
                 >
                   Agregar al carrito
                 </Button>
+                {added && (
+                  <p className="success-msg">
+                    Agregado al carrito ✅
+                  </p>
+                )}
+
+
 
                 <Button
                   variant="outline-light"
@@ -92,12 +112,11 @@ const GameDetails = ({ addToCart }) => {
 
               </div>
 
-              {added && (
-                <p className="added-message">
-                  Agregado al carrito ✅
+              {error && (
+                <p className="error-msg">
+                  Debes iniciar sesión ❌
                 </p>
               )}
-
             </div>
 
           </div>
