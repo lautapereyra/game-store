@@ -50,6 +50,11 @@ const Navbar = () => {
                             <i className="bi bi-cart"></i>
                         </button>
                     </Link>
+                    <Link to="/addGame">
+                        <button className="btn btn-outline-primary ms-2">
+                            <i className="bi bi-plus"></i>
+                        </button>
+                    </Link>
                 </div>
             </div>
         </nav>

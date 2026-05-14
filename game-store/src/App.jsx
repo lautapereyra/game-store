@@ -8,6 +8,7 @@ import Protected from './components/routing/protected/Protected';
 import NotFound from './components/ui/notFound/NotFound'
 import Dashboard from './components/dashboard/Dashboard';
 import Catalog from './components/pages/catalog/Catalog';
+import AddGame from './components/pages/gameAdd/AddGame';
 
 import Home from './components/pages/home/Home';
 import GameDetails from './components/pages/gameDetails/GameDetails';
@@ -65,6 +66,7 @@ function App() {
       <BrowserRouter>
         <Routes>
 
+          <Route path="/addGame/*" element={<AddGame />} />
           <Route path="/home/*" element={<Dashboard onLogOut={handleLogOut} />} />
           <Route path="/" element={<Navigate to="home" />} />
           <Route path="/login" element={<Login onLogin={handleLogIn} />} />

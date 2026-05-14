@@ -1,13 +1,23 @@
-/* =========================
-   CATALOGO
-========================= */
+
+.sidebar {
+    color: white;
+    padding: 15px;
+    margin-left: -55px ;
+    margin-top: 80px;
+    
+    background: rgba(255, 255, 255, 0.03); 
+    border-radius: 10px;
+
+    position: relative;
+    z-index: 2;
+}
 
 .catalog-container {
     position: relative;
 
     min-height: 100vh;
 
-    padding: 40px 0 50px;
+    padding: 40px 0 90px;
 
     overflow: hidden;
 
@@ -85,7 +95,7 @@
 
     letter-spacing: -1px;
 
-    color: white;
+    color: rgb(255, 255, 255);
 
     text-shadow:
         0 0 18px rgba(236, 31, 66, 0.25);
@@ -143,3 +153,4 @@
         gap: 10px;
     }
 }
+
