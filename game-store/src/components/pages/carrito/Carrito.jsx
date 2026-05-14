@@ -1,5 +1,6 @@
 import "./carrito.css";
 import { useNavigate } from "react-router";
+import Navbar from "../../navbar/Navbar";
 
 function Carrito({ cart = [], deleteGame, clearCart }) {
 
@@ -17,49 +18,52 @@ function Carrito({ cart = [], deleteGame, clearCart }) {
   };
 
   return (
-    <div className="cart-container">
+    <>
+      <Navbar />
+      <div className="cart-container">
 
-      <h2>Carrito</h2>
+        <h2>Carrito</h2>
 
-      {cart.length === 0 ? (
-        <h3>El carrito está vacío</h3>
-      ) : (
-        <>
-          {cart.map((game, index) => (
+        {cart.length === 0 ? (
+          <h3>El carrito está vacío</h3>
+        ) : (
+          <>
+            {cart.map((game, index) => (
 
-            <div
-              key={index}
-              className="cart-item"
-              onClick={() => handleGameClick(game.id)}
-            >
-
-              <img src={game.image} alt={game.title} />
-
-              <div className="cart-item-info">
-                <h4>{game.title}</h4>
-                <p>${game.price}</p>
-              </div>
-
-              <button
-                className="btn-remove"
-                onClick={(e) => handleDelete(e, index)}
+              <div
+                key={index}
+                className="cart-item"
+                onClick={() => handleGameClick(game.id)}
               >
-                Eliminar
-              </button>
 
-            </div>
-          ))}
+                <img src={game.image} alt={game.title} />
 
-          <h3 className="cart-total">
-            Total: ${total}
-          </h3>
+                <div className="cart-item-info">
+                  <h4>{game.title}</h4>
+                  <p>${game.price}</p>
+                </div>
 
-          <button className="btn-clear" onClick={clearCart}>
-            Vaciar carrito
-          </button>
-        </>
-      )}
-    </div>
+                <button
+                  className="btn-remove"
+                  onClick={(e) => handleDelete(e, index)}
+                >
+                  Eliminar
+                </button>
+
+              </div>
+            ))}
+
+            <h3 className="cart-total">
+              Total: ${total}
+            </h3>
+
+            <button className="btn-clear" onClick={clearCart}>
+              Vaciar carrito
+            </button>
+          </>
+        )}
+      </div>
+    </>
   );
 }
 

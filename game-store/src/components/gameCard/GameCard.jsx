@@ -1,13 +1,30 @@
 import { useNavigate } from "react-router";
 import "./gameCard.css";
 import { useState } from 'react'
+import { Button } from "react-bootstrap";
 
-function GameCard({ game, addToCart }) {
+function GameCard({ game, addToCart, loggedIn }) {
+
     const [added, setAdded] = useState(false);
+    const [error, setError] = useState(false);
+
     const navigate = useNavigate();
 
     const handleAdd = () => {
+
+        if (!loggedIn) {
+
+            setError(true);
+
+            setTimeout(() => {
+                setError(false);
+            }, 2000);
+
+            return;
+        }
+
         addToCart(game);
+
         setAdded(true);
 
         setTimeout(() => {
@@ -28,8 +45,24 @@ function GameCard({ game, addToCart }) {
                     <button onClick={handleClick}>
                         Detalles
                     </button>
-                    <button className="mt-2" onClick={handleAdd}>Agregar al carrito</button>
-                    {added && <p className="success-msg">Agregado al carrito ✅</p>}
+                    <Button
+                        variant="primary"
+                        size="lg"
+                        onClick={handleAdd}
+                    >
+                        Agregar al carrito
+                    </Button>
+                    {added && (
+                        <p className="success-msg">
+                            Agregado al carrito ✅
+                        </p>
+                    )}
+
+                    {error && (
+                        <p className="error-msg">
+                            Debes iniciar sesión ❌
+                        </p>
+                    )}
                 </div>
             </div>
         </div>
