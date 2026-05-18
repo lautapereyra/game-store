@@ -35,7 +35,7 @@ function GameCard({ game, addToCart, loggedIn }) {
         navigate(`/game/${game.id}`);
     }
     return (
-        <div className="container mb-4">
+        <div className="container">
             <div className="game-card">
                 <img src={game.image} alt={game.title} />
                 <div className="game-card-body">

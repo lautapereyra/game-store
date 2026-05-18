@@ -57,6 +57,7 @@
 
     transition: all 0.25s ease;
 }
+
 .login-input::placeholder {
     color: #9ca3af !important;
 }

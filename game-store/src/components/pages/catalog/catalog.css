@@ -1,26 +1,19 @@
-
 .sidebar {
     color: white;
     padding: 15px;
-    margin-left: -55px ;
+    margin-left: 0px;
     margin-top: 80px;
-    
-    background: rgba(255, 255, 255, 0.03); 
+    background: rgba(255, 255, 255, 0.03);
     border-radius: 10px;
-
     position: relative;
     z-index: 2;
 }
 
 .catalog-container {
     position: relative;
-
     min-height: 100vh;
-
     padding: 40px 0 90px;
-
     overflow: hidden;
-
     background:
         radial-gradient(circle at top left,
             rgba(236, 31, 66, 0.18),
@@ -36,7 +29,14 @@
             #000000 100%);
 }
 
-/* EFECTOS DE LUZ */
+.catalog-container .container {
+    max-width: 1600px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
 
 .catalog-container::before {
     content: "";
@@ -84,19 +84,12 @@
 
 .catalog-title {
     position: relative;
-
-    margin-bottom: 30px;
-
+    margin-bottom: 40px;
     text-align: center;
-
     font-size: 2.6rem;
-
     font-weight: 700;
-
     letter-spacing: -1px;
-
     color: rgb(255, 255, 255);
-
     text-shadow:
         0 0 18px rgba(236, 31, 66, 0.25);
 }
@@ -109,16 +102,11 @@
 
 .catalog-grid {
     position: relative;
-
     z-index: 2;
-
     display: grid;
-
     grid-template-columns:
         repeat(auto-fit, minmax(260px, 1fr));
-
     gap: 20px;
-
     align-items: stretch;
 }
 
@@ -127,7 +115,6 @@
 ========================= */
 
 @media (max-width: 992px) {
-
     .catalog-container {
         padding: 35px 0 45px;
     }
@@ -142,7 +129,6 @@
 }
 
 @media (max-width: 576px) {
-
     .catalog-title {
         font-size: 1.8rem;
     }
@@ -153,4 +139,3 @@
         gap: 10px;
     }
 }
-
